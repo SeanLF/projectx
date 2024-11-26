@@ -9,6 +9,8 @@ class Story < ApplicationRecord
 
   scope :by_position, -> { order(Arel.sql("stories.position ASC NULLS FIRST, stories.created_at ASC")) }
 
+  has_many_attached :attachments
+
   def best_estimate_average
     return 0 if estimates_count < 2
 
