@@ -1,0 +1,19 @@
+{
+  "name": "Ruby Selenium Environment",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.0",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "14"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rebornix.ruby",
+        "castwide.solargraph"
+      ]
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y chromium-chromedriver xvfb && ruby --version && node --version",
+  "remoteUser": "vscode"
+}
