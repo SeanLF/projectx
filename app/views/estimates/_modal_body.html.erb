@@ -1,3 +1,7 @@
+<% button_text = @estimate.persisted? ? "Save Changes" : "Create" %>
+
+<% provide(:button_text, button_text) %>
+
 <%= render "shared/story", story: @story %>
 
 <%= render partial: 'form', locals: {estimate: @estimate, story: @story, project: @project, remote: true} %>
