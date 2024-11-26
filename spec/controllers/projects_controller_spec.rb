@@ -60,10 +60,11 @@ RSpec.describe ProjectsController, type: :controller do
         }.to change(Project, :count).by(1)
       end
 
-      it "redirects to the projects" do
+      it "redirects to the project page" do
         post :create, params: {project: valid_params}
 
-        expect(response).to redirect_to "/projects"
+        last_project_id = Project.last.id
+        expect(response).to redirect_to project_path(last_project_id)
       end
     end
 
