@@ -1,6 +1,6 @@
 {
   "name": "Ruby Selenium Environment",
-  "image": "mcr.microsoft.com/devcontainers/ruby:3.0",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "14"
