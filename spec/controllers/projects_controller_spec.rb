@@ -66,6 +66,17 @@ RSpec.describe ProjectsController, type: :controller do
         last_project_id = Project.last.id
         expect(response).to redirect_to project_path(last_project_id)
       end
+
+      context "with parent id" do
+        # let(:project) is the parent of the new project
+        let(:parent_id) { project.id }
+
+        it "redirects to the parent after creations" do
+          post :create, params: {project: valid_params.merge(parent_id: parent_id)}
+
+          expect(response).to redirect_to project_path(parent_id)
+        end
+      end
     end
 
     context "with invalid attributes" do
